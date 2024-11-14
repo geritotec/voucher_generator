@@ -1,0 +1,3 @@
+/Users/geronimosotelolopez/Desktop/pdf_generator/build/CMakeFiles/my_crow_app.dir
+/Users/geronimosotelolopez/Desktop/pdf_generator/build/CMakeFiles/edit_cache.dir
+/Users/geronimosotelolopez/Desktop/pdf_generator/build/CMakeFiles/rebuild_cache.dir

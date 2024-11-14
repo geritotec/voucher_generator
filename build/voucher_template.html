@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation Voucher</title>
+    <style>
+        :root {
+            --background: 0 0% 100%;
+            --foreground: 222.2 84% 4.9%;
+            --card: 0 0% 100%;
+            --card-foreground: 222.2 84% 4.9%;
+            --popover: 0 0% 100%;
+            --popover-foreground: 222.2 84% 4.9%;
+            --primary: 221.2 83.2% 53.3%;
+            --primary-foreground: 210 40% 98%;
+            --secondary: 210 40% 96.1%;
+            --secondary-foreground: 222.2 47.4% 11.2%;
+            --muted: 210 40% 96.1%;
+            --muted-foreground: 215.4 16.3% 46.9%;
+            --accent: 210 40% 96.1%;
+            --accent-foreground: 222.2 47.4% 11.2%;
+            --destructive: 0 84.2% 60.2%;
+            --destructive-foreground: 210 40% 98%;
+            --border: 214.3 31.8% 91.4%;
+            --input: 214.3 31.8% 91.4%;
+            --ring: 221.2 83.2% 53.3%;
+            --radius: 0.5rem;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: hsl(var(--foreground));
+            background-color: hsl(var(--background));
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .voucher {
+            border: 1px solid hsl(var(--border));
+            border-radius: var(--radius);
+            padding: 2rem;
+            box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: hsl(var(--primary));
+            margin-bottom: 1rem;
+        }
+
+        .title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: hsl(var(--primary));
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .info-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .label {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: hsl(var(--muted-foreground));
+            margin-bottom: 0.25rem;
+        }
+
+        .value {
+            font-size: 1rem;
+            font-weight: 500;
+            color: hsl(var(--foreground));
+        }
+
+        .description, .price-table {
+            margin-top: 2rem;
+            padding: 1rem;
+            background-color: hsl(var(--muted));
+            border-radius: var(--radius);
+        }
+
+        .price-table h3 {
+            margin-top: 0;
+            color: hsl(var(--primary));
+        }
+
+        @media (max-width: 640px) {
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="voucher">
+        <div class="header">
+            <div class="logo">AcapulcoKingdom</div>
+            <h1 class="title">Reservation Voucher</h1>
+        </div>
+        <div class="info-grid">
+            <div class="info-item">
+                <span class="label">Reservation ID</span>
+                <span class="value">{{reservationId}}</span>
+            </div>
+            <div class="info-item">
+                <span class="label">Hotel Name</span>
+                <span class="value">{{hotelName}}</span>
+            </div>
+            <div class="info-item">
+                <span class="label">Customer ID</span>
+                <span class="value">{{customerId}}</span>
+            </div>
+            <div class="info-item">
+                <span class="label">Check-in Date</span>
+                <span class="value">{{startDate}}</span>
+            </div>
+            <div class="info-item">
+                <span class="label">Check-out Date</span>
+                <span class="value">{{endDate}}</span>
+            </div>
+            <div class="info-item">
+                <span class="label">Number of Nights</span>
+                <span class="value">{{amountOfNights}}</span>
+            </div>
+            <div class="info-item">
+                <span class="label">Number of Guests</span>
+                <span class="value">{{amountPax}}</span>
+            </div>
+            <div class="info-item">
+                <span class="label">Plan</span>
+                <span class="value">{{plan}}</span>
+            </div>
+        </div>
+        <div class="description">
+            <span class="label">Description</span>
+            <p class="value">{{description}}</p>
+        </div>
+        <div class="price-table">
+            <h3>Price Details</h3>
+            <div class="value">{{priceTable}}</div>
+        </div>
+        <div class="info-item" style="margin-top: 1rem;">
+            <span class="label">Created At</span>
+            <span class="value">{{createdAt}}</span>
+        </div>
+    </div>
+</body>
+</html>
